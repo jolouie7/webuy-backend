@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 2020_01_29_235610) do
   enable_extension "plpgsql"
 
   create_table "cart_items", force: :cascade do |t|
-    t.bigint "product_id_id"
-    t.bigint "order_id_id"
+    t.bigint "product_id"
+    t.bigint "order_id"
     t.integer "count"
     t.integer "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id_id"], name: "index_cart_items_on_order_id_id"
-    t.index ["product_id_id"], name: "index_cart_items_on_product_id_id"
+    t.index ["order_id"], name: "index_cart_items_on_order_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "user_id_id"
+    t.bigint "user_id"
     t.boolean "shipped"
     t.integer "total"
     t.boolean "paid"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_235610) do
     t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_orders_on_user_id_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
