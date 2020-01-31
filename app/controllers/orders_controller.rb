@@ -1,23 +1,27 @@
 class OrdersController < ApplicationController
   def index
     orders = Order.all
-    render json: OrderSerializer.new(orders).serialized_json
+    # render json: OrderSerializer.new(orders).serialized_json
+    render json: { orders: orders }
   end
 
   def show
     order = Order.find(params[:id])
-    render json: OrderSerializer.new(order).serialized_json
+    # render json: OrderSerializer.new(order).serialized_json
+    render json: { order: order }
   end
 
   def create
     order = Order.create(order_params)
-    render json: OrderSerializer.new(order).serialized_json
+    # render json: OrderSerializer.new(order).serialized_json
+    render json: { order: order }
   end
 
   def update
     order = Order.find(params[:id])
     order.update(order_params)
-    render json: OrderSerializer.new(order).serialized_json
+    # render json: OrderSerializer.new(order).serialized_json
+    render json: { order: order }
   end
 
   def destroy
