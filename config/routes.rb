@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :cart_items
   resources :users
+  post '/login', to: 'auth#create'
+  # do we need a signup route?
 end

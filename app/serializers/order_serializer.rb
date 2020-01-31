@@ -1,4 +1,4 @@
-class OrderSerializer < ActiveModel::Serializer
+class OrderSerializer
   # not sure if i need user_id
   include FastJsonapi::ObjectSerializer
   attributes :shipped, :total, :paid, :tracking_number, :complete
