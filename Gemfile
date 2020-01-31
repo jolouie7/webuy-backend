@@ -40,5 +40,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-"faker for seed data"
+#faker for seed data
 gem 'faker'
+
+gem 'active_model_serializers'
+
+gem 'fast_jsonapi'
+
+gem "jwt", "~> 2.2"
