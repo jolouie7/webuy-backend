@@ -12,7 +12,7 @@ User.destroy_all
 
 require 'faker'
 
-5.times {
+20.times {
   User.create!(
     name: Faker::Name.name,
     username: Faker::Superhero.name,
@@ -22,9 +22,9 @@ require 'faker'
   )
 }
 
-5.times {
+30.times {
   Product.create!(
-    name: Faker::App.name,
+    name: Faker::Commerce.product_name,
     price: rand(1..1000),
     rating: rand(1..5),
     description: Faker::Lorem.sentence,
@@ -32,7 +32,20 @@ require 'faker'
   )
 }
 
-5.times do 
+10.times {
+  Category.create(
+    name: Faker::Commerce.department(max: 1)
+  )
+}
+
+20.times do 
+  CategoryProduct.create!(
+    product_id: rand(Product.first.id..Product.last.id),
+    category_id: rand(Category.first.id..Category.last.id)
+  )
+end
+
+20.times do 
   Order.create!(
     user_id: rand(User.first.id..User.last.id),
     shipped: [true, false].sample,
@@ -43,7 +56,7 @@ require 'faker'
   )
 end
 
-5.times do
+20.times do
   CartItem.create!(
     product_id: rand(Product.first.id..Product.last.id),
     order_id:  rand(Order.first.id..Order.last.id),
