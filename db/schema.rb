@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_172350) do
     t.integer "rating"
     t.string "description"
     t.string "image"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

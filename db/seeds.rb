@@ -22,13 +22,14 @@ require 'faker'
   )
 }
 
-30.times {
+100.times {
   Product.create!(
     name: Faker::Commerce.product_name,
     price: rand(1..1000),
     rating: rand(1..5),
     description: Faker::Lorem.sentence,
-    image: ""
+    image: "",
+    quantity: rand(1..5)
   )
 }
 
@@ -38,7 +39,7 @@ require 'faker'
   )
 }
 
-20.times do 
+100.times do 
   CategoryProduct.create!(
     product_id: rand(Product.first.id..Product.last.id),
     category_id: rand(Category.first.id..Category.last.id)

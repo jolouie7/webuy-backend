@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_action :authorized, except: [:update]
+
   def index
     products = Product.all
     # render json: ProductSerializer.new(products).serialized_json

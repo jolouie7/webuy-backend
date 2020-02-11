@@ -48,3 +48,5 @@ gem 'active_model_serializers'
 gem 'fast_jsonapi'
 
 gem "jwt", "~> 2.2"
+
+gem 'stripe'

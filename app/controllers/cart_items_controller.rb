@@ -1,4 +1,5 @@
 class CartItemsController < ApplicationController
+  #might want to have a skip_before if you want to let the user go to their cart without signing in
   def index
     items = CartItem.all
     # render json: CartItemSerializer.new(items).serialized_json
