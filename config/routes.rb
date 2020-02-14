@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :cart_items
   resources :users
+  resources :charges, only: [:create]
   # do we need a signup route?
   post '/users', to: 'user#create'
   post '/signin', to: 'auth#create'

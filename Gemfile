@@ -50,3 +50,5 @@ gem 'fast_jsonapi'
 gem "jwt", "~> 2.2"
 
 gem 'stripe'
+
+gem 'dotenv-rails', groups: [:development, :test]

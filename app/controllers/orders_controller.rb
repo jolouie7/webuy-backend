@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # byebug
     order = Order.create(order_params)
     # render json: OrderSerializer.new(order).serialized_json
     render json: { order: order }
