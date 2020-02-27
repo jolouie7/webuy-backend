@@ -51,4 +51,4 @@ gem "jwt", "~> 2.2"
 
 gem 'stripe'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
