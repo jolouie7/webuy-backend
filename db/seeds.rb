@@ -22,7 +22,7 @@ require 'faker'
   )
 }
 
-# Category 1
+# Technology
   Product.create!(
     name: "Headphones",
     price: 79.99,
@@ -82,7 +82,7 @@ require 'faker'
     quantity: 1
 )
 
-# Category 2
+# Clothing
   Product.create!(
     name: "Hat",
     price: 20.99,
@@ -123,7 +123,7 @@ require 'faker'
     image: "https://lp2.hm.com/hmgoepprod?set=source%5B/46/c8/46c8f3471d51988bcc8b1b4825ee83d32be2445d.jpg%5D,origin%5Bdam%5D,category%5Bmen_hoodiessweatshirts_hoodies%5D,type%5BDESCRIPTIVESTILLLIFE%5D,res%5Bs%5D,hmver%5B1%5D&call=url%5Bfile:/product/main%5D",
     quantity: 1
 )
-# Category 3
+# Beauty Products
   Product.create!(
     name: "Body Cream",
     price: 25.99,
@@ -164,7 +164,7 @@ require 'faker'
     image: "https://images.unsplash.com/photo-1562887245-138c2f45013e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     quantity: 1
 )
-# Category 4
+# Furniture
   Product.create!(
     name: "Bar Stool",
     price: 169.99,
@@ -206,20 +206,122 @@ require 'faker'
     quantity: 1
 )
 
-10.times {
-  Category.create(
-    name: Faker::Commerce.department(max: 1)
-  )
-}
+# 10.times {
+#   Category.create(
+#     name: Faker::Commerce.department(max: 1)
+#   )
+# }
 
-100.times do 
+# Categories
+Category.create(
+  name: "Electronics"
+)
+Category.create(
+  name: "Clothing"
+)
+Category.create(
+  name: "Beauty & Health"
+)
+Category.create(
+  name: "Home"
+)
+
+# 100.times do 
+#   CategoryProduct.create!(
+#     product_id: rand(Product.first.id..Product.last.id),
+#     category_id: rand(Category.first.id..Category.last.id)
+#   )
+# end
+
+# Electronics
   CategoryProduct.create!(
-    product_id: rand(Product.first.id..Product.last.id),
-    category_id: rand(Category.first.id..Category.last.id)
+    product_id: 1,
+    category_id: 1
   )
-end
+  CategoryProduct.create!(
+    product_id: 2,
+    category_id: 1
+  )
+  CategoryProduct.create!(
+    product_id: 3,
+    category_id: 1
+  )
+  CategoryProduct.create!(
+    product_id: 4,
+    category_id: 1
+  )
+  CategoryProduct.create!(
+    product_id: 5,
+    category_id: 1
+  )
 
-20.times do 
+# Clothing
+  CategoryProduct.create!(
+    product_id: 6,
+    category_id: 2
+  )
+  CategoryProduct.create!(
+    product_id: 7,
+    category_id: 2
+  )
+  CategoryProduct.create!(
+    product_id: 8,
+    category_id: 2
+  )
+  CategoryProduct.create!(
+    product_id: 9,
+    category_id: 2
+  )
+  CategoryProduct.create!(
+    product_id: 10,
+    category_id: 2
+  )
+  
+# Beauty & Health
+  CategoryProduct.create!(
+    product_id: 11,
+    category_id: 3
+  )
+  CategoryProduct.create!(
+    product_id: 12,
+    category_id: 3
+  )
+  CategoryProduct.create!(
+    product_id: 13,
+    category_id: 3
+  )
+  CategoryProduct.create!(
+    product_id: 14,
+    category_id: 3
+  )
+  CategoryProduct.create!(
+    product_id: 15,
+    category_id: 3
+  )
+
+# Home
+  CategoryProduct.create!(
+    product_id: 16,
+    category_id: 4
+  )
+  CategoryProduct.create!(
+    product_id: 17,
+    category_id: 4
+  )
+  CategoryProduct.create!(
+    product_id: 18,
+    category_id: 4
+  )
+  CategoryProduct.create!(
+    product_id: 19,
+    category_id: 4
+  )
+  CategoryProduct.create!(
+    product_id: 20,
+    category_id: 4
+  )
+
+20.times do
   Order.create!(
     user_id: rand(User.first.id..User.last.id),
     shipped: [true, false].sample,
