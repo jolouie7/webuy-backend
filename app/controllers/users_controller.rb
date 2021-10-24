@@ -3,35 +3,17 @@ class UsersController < ApplicationController
 
   def index
     users = User.all
-    # render json: UserSerializer.new(users).serialized_json
     render json: { users: users }
   end
 
   def show
     user = User.find(params[:id])
-    # render json: UserSerializer.new(user).serialized_json
     render json: { user: user }
   end
 
   def profile
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
-
-  # ---------------- This was the code before the JWT ----------------
-  # def create
-  #   user = User.create(user_params)
-  #   # render json: UserSerializer.new(user).serialized_json
-  #   render json: { user: user }
-  # end
-
-  # def create
-  #   user = User.create!(user_params)
-  #   if user.valid?
-  #     render json: { user: UserSerializer.new(user) }, status: :created
-  #   else
-  #     render json: { error: 'failed to create user' }, status: :not_acceptable
-  #   end
-  # end
 
   def create
     # byebug
@@ -47,7 +29,6 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     order.update(user_params)
-    # render json: UserSerializer.new(user).serialized_json
     render json: { user: user }
   end
 
