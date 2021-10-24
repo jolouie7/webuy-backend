@@ -96,7 +96,7 @@ require 'faker'
     price: 5.00,
     rating: rand(1..5),
     description: Faker::Lorem.sentence,
-    image: "https://cdn.shopify.com/s/files/1/0236/4195/products/20161123_W_P_Product_00028-LR.jpg",
+    image: "https://images.unsplash.com/photo-1535486648131-54a1558cb3fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2940&q=80",
     quantity: 1
 )
   Product.create!(
